@@ -4,6 +4,7 @@ setopt interactive_comments
 #Alias
 ##Directory
 alias cd..="cd .."
+alias cdpd="cd /media/araki-mk/DATA/VSP/Projects/"
 alias l="ls --color=auto"
 alias ls="ls --color=auto"
 alias s=":"
