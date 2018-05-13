@@ -15,18 +15,12 @@ endif
 
 call neobundle#begin(expand('~/.vim/bundle/'))
   NeoBundleFetch 'Shougo/neobundle.vim'
-  NeoBundle 'tomasr/molokai'
   NeoBundle 'scrooloose/nerdtree'
   NeoBundle 'bronson/vim-trailing-whitespace'
   NeoBundle 'Yggdroot/indentLine'
 call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
-
-"File Type
-autocmd BufNewFile,BufRead *.jbuilder set filetype=ruby
-autocmd BufNewFile,BufRead Guardfile  set filetype=ruby
-autocmd BufNewFile,BufRead .pryrc set filetype=ruby
 
 "Indent
 set autoindent
@@ -35,16 +29,6 @@ set tabstop=2
 set softtabstop=2
 set smartindent
 set shiftwidth=2
-
-"molokai & Color
-if neobundle#is_installed('molokai')
-  colorscheme molokai
-endif
-syntax enable
-hi Comment ctermfg=39
-hi Visual term=reverse ctermbg=15 ctermfg=16
-hi CursorLine ctermbg=238
-hi CursorLineNr ctermfg=27 ctermbg=255
 
 "Show Setting
 set cursorline
@@ -61,20 +45,8 @@ augroup source-vimrc
 		autocmd BufWritePost *vimrc source $MYVIMRC | set foldmethod=marker
 	autocmd BufWritePost *gvimrc if has('gui_running') source $MYGVIMRC
 augroup END
-nmap n nzz
-nmap N Nzz
-nmap * *zz
-nmap # #zz
-nmap g* g*zz
-nmap g# g#zz
 set incsearch
 set wildmenu wildmode=list:full
-nnoremap s <Nop>
-nnoremap ; :
-nnoremap : ;
-""Screen Split Setting
-nnoremap <Space>h :sp<CR>
-nnoremap <Space>v :vs<CR>
 
 "Search
 set hlsearch
@@ -84,9 +56,6 @@ set smartcase
 set ignorecase
 
 "Other
-set noundofile
-set nowritebackup
-set nobackup
 nnoremap ! :!
 
 "Tag close
